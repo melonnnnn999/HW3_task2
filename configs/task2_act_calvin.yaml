@@ -1,0 +1,52 @@
+project:
+  name: task2-act-calvin
+  output_dir: outputs/task2_act_calvin
+  seed: 42
+  cache_dir: .cache
+
+dataset:
+  train_repo_id: Traly/calvin_abc_d-lerobot
+  train_root: data/lerobot/traly_calvin_abc_d_lerobot
+  train_revision: main
+  train_fps: 30
+  test_d_repo_id: Traly/calvin-task-ABC-D-lerobot-3.0
+  test_d_root: data/lerobot/traly_calvin_task_abc_d_lerobot_3_0
+  test_d_revision: main
+  test_d_fps: 10
+  test_d_episode_start: 17870
+  splits_path: data/splits/calvin_scene_splits.json
+  image_key: observation.images.top
+  wrist_image_key: observation.images.wrist
+  state_key: observation.state
+  state_dim: 15
+  action_key: action
+  action_dim: 7
+
+training:
+  policy_type: act
+  policy_selector_key: policy.type
+  steps: 5000
+  batch_size: 4
+  num_workers: 2
+  learning_rate: 1.0e-5
+  weight_decay: 1.0e-4
+  chunk_size: 100
+  n_action_steps: 100
+  eval_freq: 0
+  save_freq: 2500
+  log_freq: 100
+  device: cuda
+  tracker: wandb
+  wandb_mode: offline
+  policy_repo_namespace: null
+  train_episode_limit_per_scene: 512
+  train_episode_limit: null
+
+evaluation:
+  batch_size: 8
+  num_workers: 2
+  max_batches: null
+  val_episode_limit: 64
+  d_episode_limit: 64
+  success_threshold_l1: 0.05
+  bootstrap_samples: 1000

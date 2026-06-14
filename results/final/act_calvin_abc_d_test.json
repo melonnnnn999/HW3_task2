@@ -1,0 +1,16 @@
+{
+  "run_name": "act_calvin_abc",
+  "split": "d_test",
+  "checkpoint": "outputs/task2_act_calvin/act_calvin_abc/checkpoints/last/pretrained_model",
+  "success_proxy_threshold_l1": 0.05,
+  "mean_l1_ci95": [
+    0.9068235233426094,
+    0.9113361224532127
+  ],
+  "mean_l1": 0.9089834094047546,
+  "median_l1": 0.9008365869522095,
+  "std_l1": 0.07383018732070923,
+  "success_proxy": 0.0,
+  "num_samples": 3796,
+  "num_episodes": 64
+}

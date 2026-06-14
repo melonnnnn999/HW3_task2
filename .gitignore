@@ -1,0 +1,27 @@
+# Local caches and tool state
+.cache/
+.agents/
+.codex/
+__pycache__/
+*.py[cod]
+
+# Assignment prompt is not part of the submitted repository
+作业要求.md
+
+# Large dataset/cache directories
+data/*
+!data/raw_meta/
+!data/raw_meta/**
+!data/splits/
+!data/splits/**
+data/lerobot/
+
+# Training outputs and model checkpoints are stored outside GitHub
+outputs/
+exports/*.tar.gz
+
+# Smoke-test results are not part of the final submission
+results/smoke/
+
+# Local duplicate/export workspace
+hw3_task/
